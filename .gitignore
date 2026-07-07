@@ -1,0 +1,18 @@
+# Node.js
+node_modules/
+dist/
+.env
+.env.*
+*.log
+
+# Android / Gradle
+.gradle/
+build/
+**/build/
+local.properties
+*.iml
+.idea/
+.DS_Store
+
+# Sensitive credentials
+serviceAccountKey.json
