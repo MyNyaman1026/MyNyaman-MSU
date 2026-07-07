@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1775052753422,
+      "tag": "0000_round_doorman",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1775053087407,
+      "tag": "0001_little_songbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1775211110055,
+      "tag": "0002_ambiguous_goliath",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="24dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="32dp">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#2188FF" />
+
+        <TextView
+            android:id="@+id/tvAddChildTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Add a Child"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBack" />
+
+        <TextView
+            android:id="@+id/tvAddChildDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Enter your child's details to add them to your family group. The parent sets a temporary password here and can share it with the child."
+            android:textColor="#757575"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddChildTitle" />
+
+        <EditText
+            android:id="@+id/etChildName"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="28dp"
+            android:autofillHints="personName"
+            android:background="@drawable/rounded_input_gray"
+            android:drawableStart="@drawable/ic_person"
+            android:drawablePadding="16dp"
+            android:hint="Child's Name"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddChildDesc" />
+
+        <EditText
+            android:id="@+id/etChildContact"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="phone"
+            android:background="@drawable/rounded_input_gray"
+            android:drawableStart="@android:drawable/ic_menu_call"
+            android:drawablePadding="16dp"
+            android:hint="Contact"
+            android:inputType="phone"
+            android:paddingHorizontal="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etChildName" />
+
+        <EditText
+            android:id="@+id/etChildEmail"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="emailAddress"
+            android:background="@drawable/rounded_input_gray"
+            android:drawableStart="@drawable/ic_email"
+            android:drawablePadding="16dp"
+            android:hint="Child Email"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etChildContact" />
+
+        <EditText
+            android:id="@+id/etChildDOB"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_input_gray"
+            android:clickable="true"
+            android:cursorVisible="false"
+            android:drawableStart="@android:drawable/ic_menu_my_calendar"
+            android:drawablePadding="16dp"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:hint="dd/mm/yyyy"
+            android:inputType="none"
+            android:paddingHorizontal="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etChildEmail" />
+
+        <EditText
+            android:id="@+id/etChildPassword"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="password"
+            android:background="@drawable/rounded_input_gray"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="16dp"
+            android:hint="Set Child Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etChildDOB" />
+
+        <EditText
+            android:id="@+id/etChildConfirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="password"
+            android:background="@drawable/rounded_input_gray"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawablePadding="16dp"
+            android:hint="Confirm Child Password"
+            android:inputType="textPassword"
+            android:paddingHorizontal="24dp"
+            android:textColor="#000000"
+            android:textColorHint="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etChildPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSaveChild"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button_blue_rounded"
+            android:text="Register Child"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etChildConfirmPassword" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

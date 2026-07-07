@@ -1,0 +1,54 @@
+# =========================
+# Android / Gradle
+# =========================
+.gradle/
+.gradle-user/
+build/
+*/build/
+
+# =========================
+# Local configuration
+# =========================
+local.properties
+
+# =========================
+# Android Studio / IntelliJ
+# =========================
+.idea/
+*.iml
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build outputs / generated
+# =========================
+/captures
+.externalNativeBuild/
+.cxx/
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Keystore files (important)
+# =========================
+*.jks
+*.keystore
+
+# =========================
+# Gradle wrapper (KEEP these)
+# =========================
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# =========================
+# Misc
+# =========================
+*.apk
+*.aab

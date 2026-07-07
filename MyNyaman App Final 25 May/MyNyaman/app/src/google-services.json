@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "964069343579",
+    "project_id": "mynyaman-3a14b",
+    "storage_bucket": "mynyaman-3a14b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964069343579:android:61d663b0489aeb92c41a7e",
+        "android_client_info": {
+          "package_name": "com.mynyaman.mynyamanapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDat1VUb8DELhOjWSXIFlHD6ajaGvKPXsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

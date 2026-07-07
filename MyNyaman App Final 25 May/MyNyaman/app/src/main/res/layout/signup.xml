@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_line"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="40dp">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_clear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSignUpTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Sign Up"
+            android:textColor="#000000"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/ivLogo"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+        <TextView
+            android:id="@+id/tvSignUpSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:text="Join MyNyaman to start your journey."
+            android:textColor="#4F4F4F"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvSignUpTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvSignUpTitle" />
+
+        <LinearLayout
+            android:id="@+id/llFormContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvSignUpSubtitle">
+
+            <!-- Personal Information Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="12dp"
+                android:text="Personal Information"
+                android:textColor="#828282"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textAllCaps="true" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_input_gray"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="16dp"
+                android:hint="Full Name"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="20dp"
+                android:textColor="#000000"
+                android:textColorHint="#666666" />
+
+            <EditText
+                android:id="@+id/dateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/rounded_input_gray"
+                android:drawableStart="@drawable/calendar_24"
+                android:drawablePadding="16dp"
+                android:hint="Date of Birth"
+                android:inputType="date"
+                android:paddingHorizontal="20dp"
+                android:textColor="#000000"
+                android:textColorHint="#666666" />
+
+            <EditText
+                android:id="@+id/etSignUpEmail"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/rounded_input_gray"
+                android:drawableStart="@drawable/ic_email"
+                android:drawablePadding="16dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="20dp"
+                android:textColor="#000000"
+                android:textColorHint="#666666" />
+
+            <!-- Consultant-Specific Section -->
+            <LinearLayout
+                android:id="@+id/consultantFieldsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Professional Details"
+                    android:textColor="#828282"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="true" />
+
+                <EditText
+                    android:id="@+id/etWorkEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="16dp"
+                    android:hint="Work Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+                <EditText
+                    android:id="@+id/etPersonalPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/mobile_button_24"
+                    android:drawablePadding="16dp"
+                    android:hint="Personal Phone"
+                    android:inputType="phone"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+                <EditText
+                    android:id="@+id/etWorkPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/mobile_button_24"
+                    android:drawablePadding="16dp"
+                    android:hint="Work Phone"
+                    android:inputType="phone"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+                <EditText
+                    android:id="@+id/etAgencyWebsite"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/ic_site"
+                    android:drawablePadding="16dp"
+                    android:hint="Agency Website"
+                    android:inputType="textUri"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+                <EditText
+                    android:id="@+id/etAgencyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/ic_family"
+                    android:drawablePadding="16dp"
+                    android:hint="Agency Name"
+                    android:inputType="text"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+                <EditText
+                    android:id="@+id/etMedicalLicense"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/ic_tutorial"
+                    android:drawablePadding="16dp"
+                    android:hint="Medical License"
+                    android:inputType="text"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+                <EditText
+                    android:id="@+id/etPersonalIdentification"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/rounded_input_gray"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="16dp"
+                    android:hint="Personal ID (e.g. NIK)"
+                    android:inputType="text"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#666666" />
+
+            </LinearLayout>
+
+            <!-- Security Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="12dp"
+                android:text="Security"
+                android:textColor="#828282"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textAllCaps="true" />
+
+            <EditText
+                android:id="@+id/etSignUpPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/rounded_input_gray"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="16dp"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:textColor="#000000"
+                android:textColorHint="#666666" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:paddingHorizontal="12dp"
+                android:text="@string/password_requirement"
+                android:textColor="#757575"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/rounded_input_gray"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="16dp"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:textColor="#000000"
+                android:textColorHint="#666666" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSubmitSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/button_blue_rounded"
+                android:text="Create Account"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already a member? "
+                    android:textColor="#000000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvGoToLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Log in now!"
+                    android:textColor="#2188FF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

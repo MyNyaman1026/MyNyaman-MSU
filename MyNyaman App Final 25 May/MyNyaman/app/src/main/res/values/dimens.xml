@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Standard margins and paddings -->
+    <dimen name="screen_margin">20dp</dimen>
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="card_margin_top">14dp</dimen>
+    <dimen name="card_padding">18dp</dimen>
+    <dimen name="element_spacing">12dp</dimen>
+    <dimen name="form_margin_horizontal">32dp</dimen>
+    <dimen name="input_margin_top">16dp</dimen>
+    <dimen name="button_margin_top">32dp</dimen>
+
+    <!-- Header dimensions -->
+    <dimen name="header_padding_top">8dp</dimen>
+    <dimen name="header_padding_bottom">12dp</dimen>
+    <dimen name="header_icon_size">28dp</dimen>
+
+    <!-- Dashboard specific -->
+    <dimen name="nav_bar_height">70dp</dimen>
+    <dimen name="bottom_nav_padding_bottom">92dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_title_large">36sp</dimen>
+    <dimen name="text_title_medium">22sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_nav">12sp</dimen>
+    <dimen name="text_button">18sp</dimen>
+    <dimen name="text_subtitle">16sp</dimen>
+    <dimen name="text_login_title">44sp</dimen>
+</resources>

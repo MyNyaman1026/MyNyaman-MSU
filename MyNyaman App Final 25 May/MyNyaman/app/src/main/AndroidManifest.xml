@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo_clear"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo_clear"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyNyamanApp">
+
+        <service
+            android:name=".LimitService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <service
+            android:name=".ParentThreatAlertService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <service
+            android:name=".AppWatchAccessibilityService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/app_watch_accessibility_service" />
+        </service>
+
+        <activity
+            android:name=".FullMenu"
+            android:exported="false"
+            android:label="@string/title_activity_full_menu"
+            android:theme="@style/Theme.MyNyamanApp" />
+        <activity android:name=".DeleteChildActivity" android:exported="false" />
+        <activity android:name=".HumanConsultantPrototypeActivity" android:exported="false" />
+        <activity android:name=".ConsultantSessionHistoryActivity" android:exported="false" />
+        <activity android:name=".AiConsultantChatActivity" android:exported="false" />
+        <activity android:name=".AiThreatDetectionActivity" android:exported="false" />
+        <activity android:name=".ConsultantHubActivity" android:exported="false" />
+        <activity android:name=".ConsultantReportInboxActivity" android:exported="false" />
+        <activity android:name=".ConsultantReportDetailActivity" android:exported="false" />
+        <activity android:name=".ThreatReportListActivity" android:exported="false" />
+        <activity android:name=".ThreatReportComposeActivity" android:exported="false" />
+        <activity android:name=".ChildAccountActionsActivity" android:exported="false" />
+        <activity android:name=".ChildUsageDetailActivity" android:exported="false" />
+        <activity
+            android:name=".Splash"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Start" android:exported="false" />
+        <activity android:name=".Login" android:exported="false" />
+        <activity android:name=".Signup" android:exported="false" />
+        <activity android:name=".Roleselection" android:exported="false" />
+        <activity android:name=".Parentdash" android:exported="false" />
+        <activity android:name=".Consultantdash" android:exported="false" />
+        <activity android:name=".Childdash" android:exported="false" />
+        <activity android:name=".Userprofile" android:exported="false" />
+        <activity android:name=".Dailylimit" android:exported="false" />
+        <activity android:name=".Usagereport" android:exported="false" />
+        <activity android:name=".Chatcon" android:exported="false" />
+        <activity android:name=".Tutorial" android:exported="false" />
+        <activity android:name=".Blocksite" android:exported="false" />
+        <activity android:name=".Tutorialchild" android:exported="false" />
+        <activity android:name=".Chatconchild" android:exported="false" />
+        <activity android:name=".ProfileeditChild" android:exported="false" />
+        <activity android:name=".Usagereportchild" android:exported="false" />
+        <activity android:name=".Fpsendlink" android:exported="false" />
+        <activity android:name=".Resetemail" android:exported="false" />
+        <activity android:name=".Addchild" android:exported="false" />
+        <activity android:name=".Parentprofile" android:exported="false" />
+
+    </application>
+
+</manifest>
