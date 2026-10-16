@@ -104,6 +104,7 @@ export const registrationRouter = router({
   getUserByFirebaseUid: publicProcedure
     .input(z.object({ firebaseUid: z.string() }))
     .query(async ({ input }) => {
+      console.log("[getUserByFirebaseUid] Firebase UID:", input.firebaseUid);
       const db = await getDb();
       if (!db) return null;
 

@@ -16,7 +16,7 @@ interface AuthContextType {
   loading: boolean;
   error: string | null;
   register: (email: string, password: string, displayName: string) => Promise<void>;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<FirebaseUser>;
   logout: () => Promise<void>;
   sendVerificationEmail: () => Promise<void>;
   sendPasswordReset: (email: string) => Promise<void>;
@@ -55,7 +55,14 @@ export const FirebaseAuthProvider: React.FC<{ children: React.ReactNode }> = ({ 
   const login = async (email: string, password: string) => {
     try {
       setError(null);
-      await signInWithEmailAndPassword(auth, email, password);
+
+      const credential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      return credential.user;
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : "Login failed";
       setError(errorMessage);

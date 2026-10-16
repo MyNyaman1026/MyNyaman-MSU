@@ -13,7 +13,6 @@ import Register from "./pages/Register";
 import VerifyEmail from "./pages/VerifyEmail";
 import ParentDashboard from "./pages/ParentDashboard";
 import ChildDashboard from "./pages/ChildDashboard";
-import RoleSelection from "./pages/RoleSelection";
 import DailyLimits from "./pages/DailyLimits";
 import UsageReports from "./pages/UsageReports";
 import Chat from "./pages/Chat";
@@ -40,7 +39,6 @@ function Router() {
       <Route path={"/signin"} component={SignIn} />
       <Route path={"/register"} component={Register} />
       <Route path={"/verify-email"} component={VerifyEmail} />
-      <Route path={"/role-selection"} component={RoleSelection} />
       <Route path={"/home"} component={Home} />
       <Route path={"/dashboard/parent"} component={ParentDashboard} />
       <Route path={"/dashboard/child"} component={ChildDashboard} />

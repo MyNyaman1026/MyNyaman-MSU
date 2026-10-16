@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { useRole } from "@/contexts/RoleContext";
 import { useChild } from "@/contexts/ChildContext";
+import { useFirebaseAuth } from "@/contexts/FirebaseAuthContext";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -46,7 +47,7 @@ interface AppUsage {
 
 export default function ChildDashboardProper() {
   const [, navigate] = useLocation();
-  const { role, setRole } = useRole();
+  const { role } = useRole();
   const { selectedChild } = useChild();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -98,9 +99,10 @@ export default function ChildDashboardProper() {
     }
   }, [role, navigate]);
 
-  const handleLogout = () => {
+  const { logout } = useFirebaseAuth();
+  const handleLogout = async () => {
     localStorage.removeItem("childSession");
-    setRole(null);
+    await logout();
     navigate("/");
   };
 

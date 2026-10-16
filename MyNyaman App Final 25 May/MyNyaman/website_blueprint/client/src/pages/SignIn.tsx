@@ -1,28 +1,54 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useFirebaseAuth } from "@/contexts/FirebaseAuthContext";
+import { useRole } from "@/contexts/RoleContext";
 import { Mail, Lock, AlertCircle, Loader2 } from "lucide-react";
 
 export default function SignIn() {
   const [, setLocation] = useLocation();
   const { login, error: authError } = useFirebaseAuth();
+  const { role, loading: roleLoading } = useRole();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  useEffect(() => {
+    if (roleLoading) return;
+
+    switch (role) {
+      case "parent":
+        setLocation("/dashboard/parent");
+        break;
+
+      case "child":
+        setLocation("/dashboard/child");
+        break;
+
+      case "consultant":
+        setLocation("/dashboard/consultant");
+        break;
+    }
+  }, [role, roleLoading, setLocation]);
+
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
+
     setError("");
     setLoading(true);
 
     try {
       await login(email, password);
-      setLocation("/role-selection");
     } catch (err) {
-      setError(authError || "Failed to sign in. Please check your credentials.");
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Failed to sign in. Please check your credentials.";
+
+      setError(message);
+    } finally {
       setLoading(false);
     }
   };

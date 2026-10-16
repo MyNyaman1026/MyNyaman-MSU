@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
-import { useAuth } from "@/_core/hooks/useAuth";
+import { useFirebaseAuth } from "@/contexts/FirebaseAuthContext";
+import { useRole } from "@/contexts/RoleContext";
 import Sidebar from "@/components/Sidebar";
 import AddChildModal from "@/components/AddChildModal";
 import ChildAccessModal from "@/components/ChildAccessModal";
@@ -29,16 +30,22 @@ import { useChild } from "@/contexts/ChildContext";
 import { Child } from "@/contexts/ChildContext";
 
 export default function ParentDashboard() {
-  const { user, loading } = useAuth();
+  const {
+    user: firebaseUser,
+    loading: firebaseLoading,
+    sendVerificationEmail,
+  } = useFirebaseAuth();
+  const { user: dbUser, loading: roleLoading } = useRole();
+
+  const user = dbUser;
+  const loading = firebaseLoading || roleLoading;
   const [, navigate] = useLocation();
   const { children, addChild } = useChild();
   const [isAddChildModalOpen, setIsAddChildModalOpen] = useState(false);
   const [isChildAccessModalOpen, setIsChildAccessModalOpen] = useState(false);
-  const [isEmailVerified, setIsEmailVerified] = useState(() => {
-    if (!user) return false;
-    const verified = localStorage.getItem(`emailVerified_${user.id}`);
-    return verified === "true";
-  });
+  const [isEmailVerified, setIsEmailVerified] = useState(
+    firebaseUser?.emailVerified ?? false
+  );
 
   useEffect(() => {
     if (!loading && !user) {
@@ -54,10 +61,11 @@ export default function ParentDashboard() {
     );
   }
 
-  const handleVerifyEmail = () => {
-    if (user) {
-      localStorage.setItem(`emailVerified_${user.id}`, "true");
-      setIsEmailVerified(true);
+  const handleVerifyEmail = async () => {
+    try {
+      await sendVerificationEmail();
+    } catch (error) {
+      console.error("Failed to send verification email:", error);
     }
   };
 
